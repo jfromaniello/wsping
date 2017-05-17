@@ -1,9 +1,9 @@
-Test websocket connectivity.
+Verify websocket connectivity.
 
 ## Usage
 
 ```
-wstest [options] <url>
+wsping [options] <url>
 
 Options:
   --timeout, -t  Maximum time in seconds allowed for connection.    [default: 5]
@@ -13,9 +13,9 @@ Options:
 Example:
 
 ```
-» wstest ws://echo.websocket.org
+» wsping ws://echo.websocket.org
 Successfully connected to ws://echo.websocket.org.
-» wstest ws://example.com
+» wsping ws://example.com
 Error: unexpected server response (200).
 ```
 
@@ -23,9 +23,9 @@ Error: unexpected server response (200).
 It can also be used as a library:
 
 ```javascript
-const wstest = require('wstest');
+const wsping = require('wsping');
 
-wstest({ url: 'ws://echo.websocket.org', timeout: 5000 }, (err) => {
+wsping({ url: 'ws://echo.websocket.org', timeout: 5000 }, (err) => {
   console.log(err);
 });
 ```
@@ -33,7 +33,7 @@ wstest({ url: 'ws://echo.websocket.org', timeout: 5000 }, (err) => {
 ## Installation
 
 ```
-npm i -g wstest
+npm i -g wsping
 ```
 
 ## License

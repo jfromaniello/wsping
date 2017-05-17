@@ -1,0 +1,22 @@
+{
+  "name": "wstest",
+  "description": "test websocket connection",
+  "version": "0.0.0",
+  "author": "José F. Romaniello <jfromaniello@gmail.com> (http://joseoncode.com)",
+  "repository": {
+    "url": "git://github.com/jfromaniello/wstest.git"
+  },
+  "main": "index.js",
+  "bin": "./bin/wstest",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "cb": "^0.1.0",
+    "ws": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "~2.3.0",
+    "mocha": "~2.2.5"
+  }
+}

@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+const wstest = require('../');
+
+var yargs = require('yargs')
+    .usage('$0 [options] <url>')
+    .options({
+      'timeout': {
+        alias: 't',
+        describe: 'Maximum time in seconds allowed for connection.',
+        default: 5
+      },
+      'help': {
+        alias: 'h',
+        describe: 'Show this help.'
+      }
+    })
+    .help('h');
+
+const argv = yargs.argv;
+
+if (argv._.length === 0) {
+  return yargs.showHelp();
+}
+
+const url = argv._[0];
+
+wstest({ url, timeout: argv.timeout * 1000 }, (err) => {
+  if (err) {
+    console.error(`Error: ${err.message}.`);
+    return process.exit(1);
+  }
+  console.log(`Successfully connected to ${url}.`);
+  process.exit(0);
+});
